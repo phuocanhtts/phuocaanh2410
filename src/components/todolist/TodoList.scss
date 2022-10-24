@@ -1,0 +1,22 @@
+.todo{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin: 20px 50px;
+   }
+   .todo-list-item{
+    margin: auto 20px;
+   }
+    .handle{
+        display: flex;
+        margin: 10px 20px;
+    .show{
+        margin: auto 20px;
+        font-weight: bold;
+        
+    }
+    .remove{
+        margin: auto 20px;
+        font-weight: bold;
+    }
+}
