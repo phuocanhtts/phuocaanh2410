@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addForm } from "../redux/slice/todoslice";
 import "./AddNewForm.scss";
-import {v4 as uuidv4 } from "uuid";
+
 
 function AddNewForm(props) {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ function AddNewForm(props) {
       </div>
       <div className="button">
         <button onClick={handleSubmit} >
-          Add Note
+          ADD NOTES
         </button>
       </div>
     </div>
