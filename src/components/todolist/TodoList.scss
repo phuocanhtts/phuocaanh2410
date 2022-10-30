@@ -4,19 +4,29 @@
     border: 1px solid black;
     margin: 20px 50px;
    }
-   .todo-list-item{
-    margin: auto 20px;
-   }
+  
     .handle{
         display: flex;
+        margin: 5px 20px;
+        flex-direction: column;
+    .todo-list-item1{
         margin: 10px 20px;
+    }    
     .show{
-        margin: auto 20px;
+        margin: 5px 20px;
         font-weight: bold;
         
     }
     .remove{
-        margin: auto 20px;
+        margin: 5px 20px;
         font-weight: bold;
     }
+    .bt{
+        display: flex;
+    }   
+}
+.todo-list-item{
+    margin: auto 20px;
+    font-size: 40px;
+    font-weight: bold;
 }

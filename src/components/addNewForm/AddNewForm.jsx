@@ -3,34 +3,55 @@ import { useDispatch } from "react-redux";
 import { addForm } from "../redux/slice/todoslice";
 import "./AddNewForm.scss";
 
-
-function AddNewForm(props) {
+function AddNewForm() {
   const dispatch = useDispatch();
-  const [todoForm, setTodoForm] = useState();
-  const [todoDate, setTodoDate] = useState();
+  const [title, setTitle] = useState("");
+  const [date, setDate] = useState("");
+  const [detailTask, setDetailTask] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addForm([todoForm,todoDate]));
+    const id = Date.now().toString();
+
+    dispatch(
+      addForm({
+        title,
+        date,
+        detailTask,
+        id,
+      })
+    );
+
+    setTitle("");
+    setDate("");
+    setDetailTask("");
   };
+
   return (
     <div className="add-form">
       <div className="input">
-        <input 
-          onChange={(e) => setTodoForm(e.target.value)}
+        <input
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
           type="text"
           placeholder="Note Title"
         />
         <br />
-        <input       
-          onChange={(e) => setTodoDate(e.target.value)}
+        <input
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
           type="datetime-local"
+        />{" "}
+        <br />
+        <input
+          value={detailTask}
+          onChange={(e) => setDetailTask(e.target.value)}
+          type="text"
+          placeholder="Note Details"
         />
       </div>
       <div className="button">
-        <button onClick={handleSubmit} >
-          ADD NOTES
-        </button>
+        <button onClick={handleSubmit}>ADD NOTES</button>
       </div>
     </div>
   );
